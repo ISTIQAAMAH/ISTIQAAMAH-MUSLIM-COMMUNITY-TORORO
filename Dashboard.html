@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Istiqaamah</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fdf8f0;
+        }
+
+        .sidebar {
+            width: 220px;
+            height: 100vh;
+            background-color: #2f5d50;
+            position: fixed;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            padding-top: 20px;
+        }
+
+            .sidebar a {
+                padding: 15px 20px;
+                text-decoration: none;
+                color: white;
+                display: block;
+            }
+
+                .sidebar a:hover {
+                    background-color: #3e6e61;
+                }
+
+        .main-content {
+            margin-left: 220px;
+            padding: 20px;
+        }
+
+        .topbar {
+            background-color: #ffffff;
+            padding: 15px 20px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2 style="text-align:center;">Admin Panel</h2>
+        <a href="Manage-posts.html">Manage Posts</a>
+        <a href="Upload-events.html">Upload Events</a>
+        <a href="Upload-media.html">Upload Media</a>
+        <a href="Upload-news.html">Upload News</a>
+        <a href="Upload-sermons.html">Upload Sermons</a>
+    </div>
+    <div class="main-content">
+        <div class="topbar">
+            <div>Welcome, Admin</div>
+            <button onclick="logout()">Logout</button>
+        </div>
+        <div class="cards">
+            <div class="card">Total Posts: 0</div>
+            <div class="card">Total Events: 0</div>
+            <div class="card">Total Media: 0</div>
+            <div class="card">Total News: 0</div>
+            <div class="card">Total Sermons: 0</div>
+        </div>
+    </div>
+    <script>
+        function logout() {
+            window.location.href = "Login.html";
+        }
+    </script>
+</body>
+</html>

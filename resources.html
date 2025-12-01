@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources | Istiqaamah Muslim Community Tororo</title>
+    <style>
+        :root {
+            --green: #3A4D2F;
+            --cream: #F5F1E3;
+            --white: #FFFFFF;
+            --dark: #1a1a1a;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial,sans-serif;
+            background: var(--cream);
+            color: var(--dark);
+        }
+
+        /* HEADER */
+        header {
+            background: var(--green);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+            header .logo img {
+                height: 50px;
+            }
+
+        nav a {
+            color: var(--white);
+            margin-left: 25px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+            nav a:hover {
+                opacity: 0.7;
+            }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            height: 260px;
+            overflow: hidden;
+        }
+
+            .hero img {
+                width: 100%;
+                height: 260px;
+                object-fit: cover;
+            }
+
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            color: var(--white);
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+            text-shadow: 1px 1px 5px #000;
+        }
+
+        /* RESOURCES BUTTONS */
+        .resources-section {
+            max-width: 900px;
+            margin: 40px auto;
+            text-align: center;
+        }
+
+            .resources-section h2 {
+                color: var(--green);
+                font-size: 28px;
+                margin-bottom: 25px;
+                text-transform: uppercase;
+            }
+
+        .resources-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .resources-button {
+            display: inline-block;
+            padding: 25px 45px;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            color: var(--white);
+            background: var(--green);
+            border-radius: 10px;
+            transition: 0.3s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+            .resources-button:hover {
+                transform: translateY(-5px);
+                background: #2b3a21;
+            }
+
+        /* FOOTER */
+        footer {
+            background: var(--green);
+            color: var(--white);
+            padding: 25px;
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="logo"><img src="assets/images/logo.jpg" alt="Logo"></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="news.html">News</a>
+            <a href="events.html">Events</a>
+            <a href="sermons.html">Sermons</a>
+            <a href="media.html">Media</a>
+            <a href="resources.html" style="opacity:0.7;">Resources</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <!-- HERO -->
+    <div class="hero">
+        <img src="assets/images/Purple and Pink Retro Welcome Banner_20251126_231603_0000.png" alt="Resources Banner">
+        <div class="hero-text"></div>
+    </div>
+    <!-- RESOURCES BUTTONS -->
+    <section class="resources-section">
+        <h2>Explore Our Resources</h2>
+        <div class="resources-buttons">
+            <a href="adhkar.html" class="resources-button">Adhkar</a>
+            <a href="articles.html" class="resources-button">Articles</a>
+            <a href="quran-study.html" class="resources-button">Quran Study</a>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer>
+        © 2025 Istiqaamah Muslim Community – Tororo
+    </footer>
+</body>
+</html>

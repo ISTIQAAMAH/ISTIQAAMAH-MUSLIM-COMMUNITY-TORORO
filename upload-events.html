@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Events | Admin</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fdf8f0;
+        }
+
+        .sidebar {
+            width: 220px;
+            height: 100vh;
+            background-color: #2f5d50;
+            position: fixed;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            padding-top: 20px;
+        }
+
+            .sidebar a {
+                padding: 15px 20px;
+                text-decoration: none;
+                color: white;
+                display: block;
+            }
+
+                .sidebar a:hover {
+                    background-color: #3e6e61;
+                }
+
+        .main-content {
+            margin-left: 220px;
+            padding: 20px;
+        }
+
+        .topbar {
+            background-color: #ffffff;
+            padding: 15px 20px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #2f5d50;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 600px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        input[type="text"], input[type="date"], input[type="time"], textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        input[type="file"] {
+            margin: 10px 0;
+        }
+
+        button {
+            padding: 12px 20px;
+            background-color: #2f5d50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+            button:hover {
+                background-color: #3e6e61;
+            }
+
+        #imgPreview {
+            display: none;
+            margin-top: 10px;
+            max-width: 100%;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2 style="text-align:center;">Admin Panel</h2>
+        <a href="Dashboard.html">Dashboard</a>
+        <a href="Manage-posts.html">Manage Posts</a>
+        <a href="Upload-events.html">Upload Events</a>
+        <a href="Upload-media.html">Upload Media</a>
+        <a href="Upload-news.html">Upload News</a>
+        <a href="Upload-sermons.html">Upload Sermons</a>
+    </div>
+    <div class="main-content">
+        <div class="topbar">
+            <div>Upload Event</div>
+            <button onclick="logout()">Logout</button>
+        </div>
+        <h2>Upload New Event</h2>
+        <form id="eventForm">
+            <label>Event Title</label>
+            <input type="text" id="title" placeholder="Enter event title" required>
+            <label>Description</label>
+            <textarea id="description" placeholder="Enter event description" rows="4" required></textarea>
+            <label>Date</label>
+            <input type="date" id="date" required>
+            <label>Time</label>
+            <input type="time" id="time" required>
+            <label>Location</label>
+            <input type="text" id="location" placeholder="Enter location" required>
+            <label>Event Image</label>
+            <input type="file" id="image" accept="image/*" onchange="previewImage(event)" required>
+            <img id="imgPreview" src="#" alt="Image Preview">
+            <button type="submit">Upload Event</button>
+        </form>
+    </div>
+    <script>
+        function logout() {
+            window.location.href = "Login.html";
+        }
+
+        // Image preview
+        function previewImage(event) {
+            const preview = document.getElementById('imgPreview');
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    preview.src = e.target.result;
+                    preview.style.display = "block";
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Form submit (basic JS alert for now)
+        document.getElementById('eventForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert("Event uploaded successfully!");
+            this.reset();
+            document.getElementById('imgPreview').style.display = "none";
+        });
+    </script>
+</body>
+</html>

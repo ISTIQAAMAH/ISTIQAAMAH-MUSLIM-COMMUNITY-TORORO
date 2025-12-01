@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Media | Admin</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fdf8f0;
+        }
+
+        .sidebar {
+            width: 220px;
+            height: 100vh;
+            background-color: #2f5d50;
+            position: fixed;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            padding-top: 20px;
+        }
+
+            .sidebar a {
+                padding: 15px 20px;
+                text-decoration: none;
+                color: white;
+                display: block;
+            }
+
+                .sidebar a:hover {
+                    background-color: #3e6e61;
+                }
+
+        .main-content {
+            margin-left: 220px;
+            padding: 20px;
+        }
+
+        .topbar {
+            background-color: #ffffff;
+            padding: 15px 20px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #2f5d50;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 600px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        input[type="text"], select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        input[type="file"] {
+            margin: 10px 0;
+        }
+
+        button {
+            padding: 12px 20px;
+            background-color: #2f5d50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+            button:hover {
+                background-color: #3e6e61;
+            }
+
+        #imgPreview, #videoPreview {
+            display: none;
+            margin-top: 10px;
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        #videoPreview {
+            max-height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2 style="text-align:center;">Admin Panel</h2>
+        <a href="Dashboard.html">Dashboard</a>
+        <a href="Manage-posts.html">Manage Posts</a>
+        <a href="Upload-events.html">Upload Events</a>
+        <a href="Upload-media.html">Upload Media</a>
+        <a href="Upload-news.html">Upload News</a>
+        <a href="Upload-sermons.html">Upload Sermons</a>
+    </div>
+    <div class="main-content">
+        <div class="topbar">
+            <div>Upload Media</div>
+            <button onclick="logout()">Logout</button>
+        </div>
+        <h2>Upload New Media</h2>
+        <form id="mediaForm">
+            <label>Media Title</label>
+            <input type="text" id="title" placeholder="Enter media title" required>
+            <label>Category</label>
+            <select id="category" required>
+                <option value="">--Select Category--</option>
+                <option value="Photo">Photo</option>
+                <option value="Video">Video</option>
+                <option value="Download">Download</option>
+            </select>
+            <label>Choose File</label>
+            <input type="file" id="file" accept="image/,video/,.pdf,.doc,.docx" onchange="previewMedia(event)" required>
+            <img id="imgPreview" src="#" alt="Image Preview">
+            <video id="videoPreview" controls></video>
+            <button type="submit">Upload Media</button>
+        </form>
+    </div>
+    <script>
+        function logout() {
+            window.location.href = "Login.html";
+        }
+
+        // Preview media
+        function previewMedia(event) {
+            const file = event.target.files[0];
+            const imgPreview = document.getElementById('imgPreview');
+            const videoPreview = document.getElementById('videoPreview');
+
+            if (file) {
+                const reader = new FileReader();
+                const type = file.type;
+                reader.onload = function (e) {
+                    if (type.startsWith('image/')) {
+                        imgPreview.src = e.target.result;
+                        imgPreview.style.display = "block";
+                        videoPreview.style.display = "none";
+                    } else if (type.startsWith('video/')) {
+                        videoPreview.src = e.target.result;
+                        videoPreview.style.display = "block";
+                        imgPreview.style.display = "none";
+                    } else {
+                        imgPreview.style.display = "none";
+                        videoPreview.style.display = "none";
+                        alert("File ready for upload!");
+                    }
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Form submit (basic alert)
+        document.getElementById('mediaForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert("Media uploaded successfully!");
+            this.reset();
+            document.getElementById('imgPreview').style.display = "none";
+            document.getElementById('videoPreview').style.display = "none";
+        });
+    </script>
+</body>
+</html>

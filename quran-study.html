@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quran Study | Istiqaamah Muslim Community Tororo</title>
+    <style>
+        :root {
+            --green: #3A4D2F;
+            --cream: #F5F1E3;
+            --white: #FFFFFF;
+            --dark: #1a1a1a;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial,sans-serif;
+            background: var(--cream);
+            color: var(--dark);
+        }
+
+        /* HEADER */
+        header {
+            background: var(--green);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+            header .logo img {
+                height: 50px;
+            }
+
+        nav a {
+            color: var(--white);
+            margin-left: 25px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+            nav a:hover {
+                opacity: 0.7;
+            }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            height: 260px;
+            overflow: hidden;
+        }
+
+            .hero img {
+                width: 100%;
+                height: 260px;
+                object-fit: cover;
+            }
+
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            color: var(--white);
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+            text-shadow: 1px 1px 5px #000;
+        }
+
+        /* QURAN STUDY CONTENT */
+        .study-section {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+            .study-section h2 {
+                color: var(--green);
+                font-size: 28px;
+                margin-bottom: 25px;
+                text-align: center;
+                text-transform: uppercase;
+            }
+
+        .study-card {
+            background: var(--white);
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+            .study-card h3 {
+                color: var(--green);
+                margin-bottom: 10px;
+            }
+
+            .study-card p {
+                font-size: 16px;
+                line-height: 1.6;
+            }
+
+            .study-card a {
+                display: inline-block;
+                margin-top: 10px;
+                text-decoration: none;
+                color: var(--green);
+                font-weight: bold;
+            }
+
+                .study-card a:hover {
+                    opacity: 0.7;
+                }
+
+        /* FOOTER */
+        footer {
+            background: var(--green);
+            color: var(--white);
+            padding: 25px;
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="logo"><img src="assets/images/logo.jpg" alt="Logo"></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="news.html">News</a>
+            <a href="events.html">Events</a>
+            <a href="sermons.html">Sermons</a>
+            <a href="media.html">Media</a>
+            <a href="resources.html" style="opacity:0.7;">Resources</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <!-- HERO -->
+    <div class="hero">
+        <img src="assets/images/pngtree-afro-american-modern-muslim-women-lifestyle-american-startup-photo-picture-image_13198506.jpg" alt="Quran Study Banner">
+        <div class="hero-text">Quran Study</div>
+    </div>
+    <!-- QURAN STUDY CONTENT -->
+    <section class="study-section">
+        <h2>Quran Study Guides</h2>
+        <div class="study-card">
+            <h3>Learning Tajweed</h3>
+            <p>Understand the correct pronunciation of Quranic letters and rules for proper recitation with step-by-step examples and exercises.</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="study-card">
+            <h3>Understanding Surahs</h3>
+            <p>Detailed explanations and commentary on selected Surahs to deepen your understanding of the meanings and lessons of the Quran.</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="study-card">
+            <h3>Daily Quran Practice</h3>
+            <p>Practical methods to incorporate daily Quran reading, memorization, and reflection into your life for spiritual growth.</p>
+            <a href="#">Read More</a>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer>
+        © 2025 Istiqaamah Muslim Community – Tororo
+    </footer>
+</body>
+</html>

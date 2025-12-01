@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Istiqaamah Muslim Community – Tororo</title>
+    <style>
+        :root {
+            --green: #3a4d2f; /* Army green */
+            --cream: #f5f1e3;
+            --white: #ffffff;
+            --dark: #1f1f1f;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        body {
+            background: var(--cream);
+            color: var(--dark);
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background: var(--green);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 25px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+            header .logo img {
+                height: 50px;
+            }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 500;
+        }
+
+            nav a:hover {
+                opacity: 0.8;
+            }
+
+        /* ===== HERO SLIDER ===== */
+        .hero {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+        }
+
+            .hero img {
+                width: 100%;
+                height: 400px;
+                object-fit: cover;
+            }
+
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            color: var(--white);
+            text-align: center;
+            font-size: 36px;
+            font-weight: bold;
+            text-shadow: 1px 1px 5px #000;
+        }
+
+        /* ===== QUICK LINKS ===== */
+        .section-title {
+            text-align: center;
+            font-size: 26px;
+            color: var(--green);
+            margin: 40px 0 10px;
+        }
+
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+            gap: 20px;
+            padding: 20px 25px;
+        }
+
+        .quick-card {
+            background: var(--white);
+            padding: 20px;
+            border-left: 5px solid var(--green);
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: 0.3s;
+            text-decoration: none;
+            color: var(--dark);
+        }
+
+            .quick-card:hover {
+                transform: translateY(-5px);
+            }
+
+        /* ===== NEWS ===== */
+        .news {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+            gap: 20px;
+            padding: 20px 25px 40px;
+        }
+
+        .news-card {
+            background: var(--white);
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+            .news-card img {
+                width: 100%;
+                height: 180px;
+                object-fit: cover;
+            }
+
+            .news-card .content {
+                padding: 15px;
+            }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--green);
+            color: var(--white);
+            padding: 30px 25px;
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="logo"><img src="assets/images/logo.jpg" alt="Logo"></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="news.html">News</a>
+            <a href="events.html">Events</a>
+            <a href="sermons.html">Sermons</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <!-- HERO SLIDER -->
+    <div class="hero">
+        <img src="assets/images/R.jpg" alt="Slider Banner 1">
+        <div class="hero-text">Welcome to Istiqaamah Muslim Community</div>
+    </div>
+    <!-- QUICK LINKS -->
+    <div class="section-title">Quick Access</div>
+    <section class="quick-links">
+        <a href="news.html" class="quick-card">📌 Latest News</a>
+        <a href="upcoming.html" class="quick-card">📅 Upcoming Events</a>
+        <a href="sermons.html" class="quick-card">🎧 Sermons</a>
+        <a href="live.html" class="quick-card">📺 Live Stream</a>
+    </section>
+    <!-- NEWS -->
+    <div class="section-title">Recent News</div>
+    <section class="news">
+        <div class="news-card">
+            <img src="assets/images/IMG-20251120-WA0020.jpg" alt="News">
+            <div class="content">
+                <h3>Community Da’wah Program</h3>
+                <p>Alhamdulillah, our outreach was successful.</p>
+            </div>
+        </div>
+        <div class="news-card">
+            <img src="assets/images/IMG-20251120-WA0019.jpg" alt="News">
+            <div class="content">
+                <h3>Islamic Seminar</h3>
+                <p>Students gathered for a one-day Islamic seminar.</p>
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer>
+        Istiqaamah Muslim Community – Tororo | © 2025 All Rights Reserved
+    </footer>
+</body>
+</html>

@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Events | Istiqaamah Muslim Community Tororo</title>
+    <style>
+        :root {
+            --green: #3A4D2F;
+            --cream: #F5F1E3;
+            --white: #FFFFFF;
+            --dark: #1a1a1a;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial,sans-serif;
+            background: var(--cream);
+            color: var(--dark);
+        }
+
+        /* HEADER */
+        header {
+            background: var(--green);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+            header .logo img {
+                height: 50px;
+            }
+
+        nav a {
+            color: var(--white);
+            margin-left: 25px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+            nav a:hover {
+                opacity: 0.7;
+            }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            height: 260px;
+            overflow: hidden;
+        }
+
+            .hero img {
+                width: 100%;
+                height: 260px;
+                object-fit: cover;
+            }
+
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            color: var(--white);
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+            text-shadow: 1px 1px 5px #000;
+        }
+
+        /* EVENTS GRID */
+        .events-section {
+            padding: 45px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+            .events-section h2 {
+                color: var(--green);
+                font-size: 28px;
+                margin-bottom: 25px;
+                text-transform: uppercase;
+                text-align: center;
+            }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+            gap: 25px;
+        }
+
+        .event-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            transition: .3s;
+        }
+
+            .event-card:hover {
+                transform: translateY(-5px);
+            }
+
+            .event-card img {
+                width: 100%;
+                height: 180px;
+                object-fit: cover;
+            }
+
+            .event-card .content {
+                padding: 15px;
+            }
+
+            .event-card h3 {
+                margin-bottom: 10px;
+                font-size: 18px;
+                color: var(--green);
+            }
+
+            .event-card p {
+                font-size: 15px;
+                line-height: 1.6;
+            }
+
+        /* FOOTER */
+        footer {
+            background: var(--green);
+            color: var(--white);
+            padding: 25px;
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="logo"><img src="assets/images/logo.jpg" alt="Logo"></div>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../about.html">About</a>
+            <a href="../news.html">News</a>
+            <a href="../upcoming.html" style="opacity:0.7;">Events</a>
+            <a href="../sermons.html">Sermons</a>
+            <a href="../contact.html">Contact</a>
+        </nav>
+    </header>
+    <!-- HERO -->
+    <div class="hero">
+        <img src="assets/images/Gold and White Traditional Islamic Facebook Profile Picture_20251126_231957_0000.png" alt="Events Banner">
+        <div class="hero-text">Upcoming Events</div>
+    </div>
+    <!-- EVENTS CARDS -->
+    <section class="events-section">
+        <h2>Upcoming Events</h2>
+        <div class="events-grid">
+            <div class="event-card">
+                <img src="assets/images/a819472c3bf0d40490ff19e352cf49dc.png" alt="Event">
+                <div class="content">
+                    <h3>Ramadan Preparation Workshop</h3>
+                    <p>Date: 5th March 2026 | Location: Community Center</p>
+                    <p>Training and guidance for Ramadan activities and community participation.</p>
+                </div>
+            </div>
+            <div class="event-card">
+                <img src="assets/images/Senior-Engineer-at-ZTE-sharing-his-experience.jpg" alt="Event">
+                <div class="content">
+                    <h3>Youth Leadership Training</h3>
+                    <p>Date: 20th March 2026 | Location: Mosque Hall</p>
+                    <p>Interactive workshop for young community leaders to develop skills and Islamic knowledge.</p>
+                </div>
+            </div>
+            <div class="event-card">
+                <img src="assets/images/IMG-20251102-WA0004.jpg" alt="Event">
+                <div class="content">
+                    <h3>Community Health Outreach</h3>
+                    <p>Date: 10th April 2026 | Location: Community Park</p>
+                    <p>Free health checkups and awareness sessions for the community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer>
+        © 2025 Istiqaamah Muslim Community – Tororo
+    </footer>
+</body>
+</html>
